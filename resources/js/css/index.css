@@ -1,0 +1,9 @@
+*{ margin: 0 auto; padding: 0; }
+
+.header{ display: flex; margin: 10px 0; }
+
+.nav-box{ display: flex; flex-wrap: wrap; }
+.nav-box .nav{ list-style: none; width: 150px; height: 40px; background: red; font-family: 微軟正黑體; font-weight: 900; }
+.nav-box .nav>li{ width: 100px; height: 40px; line-height: 40px; text-align: center; cursor: pointer; }
+.nav-box .sub-none{ display: none; }
+.nav-box .sub{ list-style: none; background: mediumorchid; }
