@@ -18,6 +18,6 @@ class PetController extends Controller
         $navField = $this->petService->getNavMenu();
         $userMenu = $this->petService->getUserMenu();
 
-        return view('frontend.master', compact('navField', 'userMenu'));
+        return view('frontend.index', compact('navField', 'userMenu'));
     }
 }

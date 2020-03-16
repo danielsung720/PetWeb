@@ -3,7 +3,7 @@
 .header{ display: flex; margin-top: 30px; }
 
 .user_menu{ margin-top: 10px; }
-.nav{ padding-bottom: 10px; border-bottom: #ddd solid 2px; }
+.nav{ padding-bottom: 10px; border-bottom: #ddd solid 1px; }
 .user_menu,
 .nav{ display: flex; flex-wrap: wrap; justify-content: center; }
 .user_menu .title,
@@ -18,6 +18,9 @@
 .nav .sub{ display: none; z-index: 10; position: absolute; }
 .user_menu .sub li,
 .nav .sub li{ margin: 20px; position: relative; left: -20px; }
+
+.content { display: flex; justify-content: center; margin: 10px 0; }
+.content>.slick { flex: none; width:100%; max-width: 72%; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }

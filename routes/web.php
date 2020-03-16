@@ -13,4 +13,4 @@
 
 // Route::get('/', function () { return view('index'); }); Vue
 
-Route::get('/', 'PetController@index');
+Route::get('/', 'PetController@index')->name('index');
