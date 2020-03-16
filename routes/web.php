@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () { return view('index'); }); Vue
+
+Route::get('/', 'PetController@index');

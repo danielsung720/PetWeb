@@ -1797,12 +1797,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log(this.nav);
@@ -38000,28 +37994,16 @@ var render = function() {
                   _vm.hover === item.title ? _vm.subClass : _vm.subNoneClass
                 ]
               },
-              [
-                _vm._l(item.sub, function(sub) {
-                  return _c("li", { key: sub.id }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(sub.title) +
-                        "\n                "
-                    )
-                  ])
-                }),
-                _vm._v(" "),
-                _vm._l(item.sub, function(sub) {
-                  return _c("li", { key: sub.id }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(sub.icon) +
-                        "\n                "
-                    )
-                  ])
-                })
-              ],
-              2
+              _vm._l(item.sub, function(sub) {
+                return _c("li", { key: sub.id }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(sub.title) +
+                      "\n                "
+                  )
+                ])
+              }),
+              0
             )
           ])
         ]
