@@ -8,16 +8,22 @@ use App\Service\PetService;
 class PetController extends Controller
 {
     private $petService;
+    private $navField;
+    private $userMenu;
     public function __construct(PetService $petService)
     {
         $this->petService = $petService;
+        $this->navField = $this->petService->getNavMenu();
+        $this->userMenu = $this->petService->getUserMenu();
     }
 
     public function index()
     {
-        $navField = $this->petService->getNavMenu();
-        $userMenu = $this->petService->getUserMenu();
+        return view('frontend.index',['navField'=>$this->navField, 'userMenu'=>$this->userMenu]);
+    }
 
-        return view('frontend.index', compact('navField', 'userMenu'));
+    public function register()
+    {
+        return view('frontend.register',['navField'=>$this->navField, 'userMenu'=>$this->userMenu]);
     }
 }

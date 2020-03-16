@@ -3,7 +3,7 @@
     @foreach ($userMenu as $key => $item)
     <ul class="title">
         <li>
-            <a href="">
+            <a href="{{ route($item['route_name']) }}">
             <img src="{{ URL::asset($item['icon_path']) }}" alt="">
             {{$item['field']}}
             </a>
