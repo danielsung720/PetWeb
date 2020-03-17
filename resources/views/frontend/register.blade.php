@@ -5,14 +5,17 @@
 @section('content')
 <!-- Home Start -->
 <div class="content">
-    <div class="register">
-        <div>帳號：<input type="text"></div>
-        <div>密碼：<input type="text"></div>
-        <div>生日：<input type="text"></div>
-        <div>信箱：<input type="text"></div>
-        <div>地址：<input type="text"></div>
-        <div><button type="submit">加入會員</button></div>
-    </div>
+    <form method="POST" action="register">
+    {!! csrf_field() !!}
+        <div class="register">
+            <div><h3>會員資料填寫</h3></div>
+            <div>信　　箱：<input type="email" name="email" placeholder="請輸入信箱"></div>
+            <div>密　　碼：<input type="password" name="password" placeholder="請輸入密碼"></div>
+            <div>確認密碼：<input type="password" name="password_confirm" placeholder="再次輸入密碼"></div>
+            <div>姓　　名：<input type="text" name="name" placeholder="請輸入姓名"></div>
+            <div><button type="submit">加入會員</button></div>
+        </div>
+    </form>
 </div>
 <!-- Home End -->
 @endsection

@@ -15,3 +15,4 @@
 
 Route::get('/', 'PetController@index')->name('index');
 Route::get('/register', 'PetController@register')->name('register');
+Route::post('/register', 'MemberController@store');
