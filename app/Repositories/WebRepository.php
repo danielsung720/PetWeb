@@ -16,9 +16,14 @@ class WebRepository extends Model
         $this->userMenu = $userMenu;
     }
 
-    public function getUserMenuData()
+    public function getUserMenuData($menuType)
     {
-        $data = $this->userMenu->get();
+        $type = gettype($menuType);
+        if($type == 'NULL') {
+            $data = $this->userMenu->where('type', $menuType)->orWhere('type', 5)->get();
+        } else {
+            $data = $this->userMenu->where('type', $menuType)->orWhere('type', 4)->orWhere('type', 5)->get();
+        }
         return $data;
     }
 

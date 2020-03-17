@@ -13,9 +13,9 @@ class WebService
         $this->webRepository = $webRepository;
     }
 
-    public function getUserMenu()
+    public function getUserMenu($menuType)
     {
-        $data = $this->webRepository->getUserMenuData();
+        $data = $this->webRepository->getUserMenuData($menuType);
         $menu = $this->getMenu($data);
 
         return $menu;

@@ -2,6 +2,8 @@
 
 .header{ display: flex; margin-top: 30px; }
 
+.user_name{ display: flex; justify-content: center; margin-top: 10px; font-weight: 900; cursor: default; }
+
 .user_menu{ margin-top: 10px; }
 .nav{ padding-bottom: 10px; border-bottom: #ddd solid 1px; }
 .user_menu,

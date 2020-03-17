@@ -1,4 +1,9 @@
 <!-- Nav Start -->
+@if(session('name') !== null)
+    <div class="user_name">
+        {{ session('name') }} 您好!!
+    </div>
+@endif
 <div class="user_menu">
     @foreach ($userMenu as $key => $item)
     <ul class="title">
@@ -24,8 +29,5 @@
         </li>
     </ul>
     @endforeach
-</div>
-<div class="alert alert-success">
-    {{ session('isAdmin') }}
 </div>
 <!-- Nav End -->

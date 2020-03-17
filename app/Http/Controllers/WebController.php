@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service\WebService;
+use Illuminate\Support\Facades\Session;
 
 class WebController extends Controller
 {
@@ -14,9 +15,9 @@ class WebController extends Controller
     public function __construct(WebService $webService)
     {
         $this->webService = $webService;
-        $this->menuType = session()->get('isAdmin');
+        $this->menuType = Session::get('isAdmin');
         $this->navField = $this->webService->getNavMenu();
-        $this->userMenu = $this->webService->getUserMenu($this->menuTyp);
+        $this->userMenu = $this->webService->getUserMenu($this->menuType);
     }
 
     public function index()

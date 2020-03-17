@@ -16,7 +16,12 @@ class MemberController extends Controller
             if($request->email == $userData['email'] && $request->password == $userData['password']) {
                 // 登入成功
                 $isAdmin = $userData['isAdmin'];
-                return redirect('/')->with('isAdmin', $isAdmin);
+                $name = $userData['name'];
+                Session::put([
+                    'isAdmin' => $isAdmin,
+                    'name' => $name
+                    ]);
+                return redirect('/');
             } else {
                 // 登入失敗
                 return redirect('/login');
