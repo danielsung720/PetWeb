@@ -31,6 +31,12 @@ class MemberController extends Controller
         }
     }
 
+    public function postLogout()
+    {
+        Session::flush();
+        return redirect('/');
+    }
+
     public function postRegister(Request $request)
     {
         $request->validate([ 
