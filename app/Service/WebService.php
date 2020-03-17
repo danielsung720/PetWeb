@@ -2,20 +2,20 @@
 
 namespace App\Service;
 
-use App\Repositories\PetRepository;
+use App\Repositories\WebRepository;
 use Illuminate\Database\Eloquent\Collection;
 
-class PetService
+class WebService
 {
-    private $petRepository;
-    public function __construct(PetRepository $petRepository)
+    private $webRepository;
+    public function __construct(WebRepository $webRepository)
     {
-        $this->petRepository = $petRepository;
+        $this->webRepository = $webRepository;
     }
 
     public function getUserMenu()
     {
-        $data = $this->petRepository->getUserMenuData();
+        $data = $this->webRepository->getUserMenuData();
         $menu = $this->getMenu($data);
 
         return $menu;
@@ -23,7 +23,7 @@ class PetService
 
     public function getNavMenu()
     {
-        $data = $this->petRepository->getNavData();
+        $data = $this->webRepository->getNavData();
         $menu = $this->getMenu($data);
 
         return $menu;

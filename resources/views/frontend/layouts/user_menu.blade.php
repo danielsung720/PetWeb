@@ -25,4 +25,7 @@
     </ul>
     @endforeach
 </div>
+<div class="alert alert-success">
+    {{ session('isAdmin') }}
+</div>
 <!-- Nav End -->

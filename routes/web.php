@@ -13,6 +13,12 @@
 
 // Route::get('/', function () { return view('index'); }); Vue
 
-Route::get('/', 'PetController@index')->name('index');
-Route::get('/register', 'PetController@register')->name('register');
-Route::post('/register', 'MemberController@store');
+Route::get('/', 'WebController@index')->name('index');
+
+// 登入
+Route::get('/login', 'WebController@getLogin')->name('login');
+Route::post('/login', 'MemberController@postLogin');
+
+// 註冊
+Route::get('/register', 'WebController@getRegister')->name('register');
+Route::post('/register', 'MemberController@postRegister');

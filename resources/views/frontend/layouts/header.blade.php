@@ -1,7 +1,9 @@
 <!-- Header Start -->
 <div class="header">
     <div class="logo">
-    <img src="{{ URL::asset('images/headerIcon/logo.png') }}" alt="">
+        <a href="{{ route('index') }}">
+            <img src="{{ URL::asset('images/headerIcon/logo.png') }}" alt="">
+        </a>
     </div>
 </div>
 <!-- Header End -->

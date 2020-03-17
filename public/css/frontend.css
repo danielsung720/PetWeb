@@ -22,14 +22,25 @@
 .content{ display: flex; justify-content: center; margin: 10px 0; }
 .content>.slick { flex: none; width:100%; max-width: 72%; }
 
-.register{ text-align: center; font-size: 20px; }
-.register div{ margin: 10px 0; }
-.register div:nth-child(1) { margin-bottom: 20px; }
-.register div:nth-last-child(1){ margin-top: 20px; }
-.register input{ font-size: 20px; border-radius: 10px; border: #ddd 1px solid; padding: 10px; }
-.register input:focus{ outline: none; background: #ddd; }
-.register button{ color: #fff; background: #FF8800; border: none; border-radius: 10px; padding: 10px; cursor: pointer; }
-.register button:hover{ font-weight: 900; }
+
+.register,
+.login{ text-align: center; font-size: 20px; }
+.register div,
+.login div{ margin: 10px 0; }
+.register div:nth-child(1),
+.login div:nth-child(1){ margin-bottom: 20px; }
+.register div:nth-last-child(1),
+.login div:nth-last-child(1){ margin-top: 20px; }
+.register input,
+.login input{ font-size: 20px; border-radius: 10px; border: #ddd 1px solid; padding: 10px; }
+.register input:focus,
+.login input:focus{ outline: none; background: #ddd; }
+.register button,
+.login button,
+.login a{ color: #fff; background: #FF8800; border: none; border-radius: 10px; padding: 10px; cursor: pointer; font-size: 14px; text-decoration: none; }
+.register button:hover,
+.login button:hover,
+.login a:hover{ font-weight: 900; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }

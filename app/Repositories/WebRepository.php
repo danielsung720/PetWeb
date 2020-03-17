@@ -6,7 +6,7 @@ use App\Model\Nav;
 use App\Model\UserMenu;
 use Illuminate\Database\Eloquent\Model;
 
-class PetRepository extends Model
+class WebRepository extends Model
 {
     private $nav;
     private $userMenu;
