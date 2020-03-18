@@ -11,13 +11,13 @@ class WebController extends Controller
     private $webService;
     private $navField;
     private $userMenu;
-    private $menuType;
+    private $identity;
     public function __construct(WebService $webService)
     {
         $this->webService = $webService;
-        $this->menuType = Session::get('isAdmin');
+        $this->identity = Session::get('identity');
         $this->navField = $this->webService->getNavMenu();
-        $this->userMenu = $this->webService->getUserMenu($this->menuType);
+        $this->userMenu = $this->webService->getUserMenu($this->identity);
     }
 
     public function index()
@@ -33,5 +33,10 @@ class WebController extends Controller
     public function getLogin()
     {
         return view('frontend.login',['navField'=>$this->navField, 'userMenu'=>$this->userMenu]);
+    }
+
+    public function getMember()
+    {
+        return view('frontend.member',['navField'=>$this->navField, 'userMenu'=>$this->userMenu]);
     }
 }

@@ -18,8 +18,7 @@ class WebRepository extends Model
 
     public function getUserMenuData($menuType)
     {
-        $type = gettype($menuType);
-        if($type == 'NULL') {
+        if($menuType === null) {
             $data = $this->userMenu->where('type', $menuType)->orWhere('type', 5)->get();
         } else {
             $data = $this->userMenu->where('type', $menuType)->orWhere('type', 4)->orWhere('type', 5)->get();
