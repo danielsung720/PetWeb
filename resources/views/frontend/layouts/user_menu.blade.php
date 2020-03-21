@@ -1,10 +1,10 @@
 <!-- Nav Start -->
 @if(session('name') !== null)
-    <div class="user_name">
+    <div class="user-name">
         {{ session('name') }} 您好!!
     </div>
 @endif
-<div class="user_menu">
+<div class="user-menu">
     @foreach ($userMenu as $key => $item)
     <ul class="title">
         <li>
@@ -17,7 +17,7 @@
                 @foreach ($item['sub'] as $sub)
                     @if($sub['field'] !== '')
                     <li>
-                        <a href="">
+                        <a href="{{ route($sub['route_name']) }}">
                         <img src="{{ URL::asset($sub['icon_path']) }}" alt="">
                         {{$sub['field']}}
                         </a>

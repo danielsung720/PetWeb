@@ -7,7 +7,7 @@
 <div class="content">
     <form method="POST" action="update">
     {!! csrf_field() !!}
-        <div class="update_data">
+        <div class="update-data">
             <div><h3>修改會員資料</h3></div>
             <div>信　　箱：<input type="text" name="email" value="{{ $userData['email'] }}" readonly="value"></div>
             <div>密　　碼：<input type="password" name="password" placeholder="請輸入密碼"></div>

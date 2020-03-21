@@ -54,4 +54,11 @@ class UserService
 
         $this->userRepository->updateDate($input);
     }
+
+    public function getAllUserData()
+    {
+        $data = $this->userRepository->getAllUserData();
+
+        return $data;
+    }
 }

@@ -36,4 +36,11 @@ class UserRepository extends Model
             'name' => $input['name'],
         ]);
     }
+
+    public function getAllUserData()
+    {
+        $data = $this->userData->get();
+
+        return $data;
+    }
 }

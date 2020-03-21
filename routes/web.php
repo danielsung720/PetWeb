@@ -13,6 +13,7 @@
 
 // Route::get('/', function () { return view('index'); }); Vue
 
+// 首頁
 Route::get('/', 'WebController@index')->name('index');
 
 // 註冊
@@ -27,3 +28,6 @@ Route::get('/logout', 'UserController@postLogout')->name('logout');
 // 會員管理
 Route::middleware('UserAuth')->get('/user', 'WebController@getUser')->name('user');
 Route::middleware('UserAuth')->post('/update', 'UserController@update');
+
+// 後台管理
+Route::middleware('AdminAuth')->get('/admin_user', 'WebController@getAllUser')->name('admin_user');

@@ -2,58 +2,64 @@
 
 .header{ display: flex; margin-top: 30px; }
 
-.user_name{ display: flex; justify-content: center; margin-top: 10px; font-weight: 900; cursor: default; }
+.user-name{ display: flex; justify-content: center; margin-top: 10px; font-weight: 900; cursor: default; }
 
-.user_menu{ margin-top: 10px; }
+.user-menu{ margin-top: 10px; }
 .nav{ padding-bottom: 10px; border-bottom: #ddd solid 1px; }
-.user_menu,
+.user-menu,
 .nav{ display: flex; flex-wrap: wrap; justify-content: center; }
-.user_menu .title,
+.user-menu .title,
 .nav .title{ margin: 10px}
-.user_menu .title a:hover,
+.user-menu .title a:hover,
 .nav .title a:hover{ background: #FF8800; font-weight: 900; color: #fff; }
-.user_menu .title a,
+.user-menu .title a,
 .nav .title a{ color: #505050; text-decoration: none; font-size: 18px; padding: 10px;  background: #fff; transition: background-color .3s; }
-.user_menu .title img,
+.user-menu .title img,
 .nav .title img{ width: 18px; height: 18px; position: relative; top: 3px; }
-.user_menu .sub,
+.user-menu .sub,
 .nav .sub{ display: none; z-index: 10; position: absolute; }
-.user_menu .sub li,
+.user-menu .sub li,
 .nav .sub li{ margin: 20px; position: relative; left: -20px; }
 
 .content{ display: flex; justify-content: center; margin: 10px 0; }
 .content>.slick { flex: none; width:100%; max-width: 72%; }
 
 .register,
-.update_data,
+.update-data,
 .login{ text-align: center; font-size: 20px; }
 .register div,
-.update_data div,
+.update-data div,
 .login div{ margin: 10px 0; }
 .register div:nth-child(1),
-.update_data div:nth-child(1),
+.update-data div:nth-child(1),
 .login div:nth-child(1){ margin-bottom: 20px; }
 .register div:nth-last-child(1),
-.update_data div:nth-last-child(1),
+.update-data div:nth-last-child(1),
 .login div:nth-last-child(1){ margin-top: 20px; }
 .register input,
-.update_data input,
+.update-data input,
 .login input{ font-size: 20px; border-radius: 10px; border: #ddd 1px solid; padding: 10px; }
 .register input:focus,
-.update_data input:focus,
+.update-data input:focus,
 .login input:focus,
 .register button:focus,
-.update_data button:focus,
+.update-data button:focus,
 .login button:focus,
 .login a:focus{ outline: none; }
 .register button,
-.update_data button,
+.update-data button,
 .login button,
 .login a{ color: #fff; background: #FF8800; border: none; border-radius: 10px; padding: 10px; cursor: pointer; font-size: 14px; text-decoration: none; }
 .register button:hover,
-.update_data button:hover,
+.update-data button:hover,
 .login button:hover,
 .login a:hover{ font-weight: 900; }
+
+.admin-user .list{ display: flex; justify-content: center;}
+.admin-user .list div:nth-child(1){ width: 50px; }
+.admin-user .list div:nth-child(2){ width: 200px; }
+.admin-user .list div:nth-child(3){ width: 100px; }
+.admin-user .list div:nth-child(4){ width: 70px; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }

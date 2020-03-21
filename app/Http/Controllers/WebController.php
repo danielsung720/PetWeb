@@ -52,4 +52,15 @@ class WebController extends Controller
             'userData' => $userData
         ]);
     }
+
+    public function getAllUser()
+    {
+        $userData = $this->userService->getAllUserData();
+
+        return view('frontend.admin_user',[
+            'navField' => $this->navField,
+            'userMenu' => $this->userMenu,
+            'userData' => $userData
+        ]);
+    }
 }
