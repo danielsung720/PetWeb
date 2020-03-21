@@ -17,12 +17,12 @@ Route::get('/', 'WebController@index')->name('index');
 
 // 註冊
 Route::get('/register', 'WebController@getRegister')->name('register');
-Route::post('/register', 'MemberController@postRegister');
+Route::post('/register', 'UserController@postRegister');
 
 // 登入&登出
 Route::get('/login', 'WebController@getLogin')->name('login');
-Route::post('/login', 'MemberController@postLogin');
-Route::get('/logout', 'MemberController@postLogout')->name('logout');
+Route::post('/login', 'UserController@postLogin');
+Route::get('/logout', 'UserController@postLogout')->name('logout');
 
 // 會員管理
-Route::middleware('member')->get('/member', 'WebController@getMember')->name('member');
+Route::middleware('UserAuth')->get('/member', 'WebController@getMember')->name('member');

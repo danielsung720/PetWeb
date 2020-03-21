@@ -2,34 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\UserData;
+use App\Service\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class MemberController extends Controller
+class UserController extends Controller
 {
+    private $userService;
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function postLogin(Request $request)
     {
-        if($request->email !== null && $request->password !== null) {
-            $userData = UserData::where('email', $request->email)->first();
-            
-            if($request->email == $userData['email'] && $request->password == $userData['password']) {
-                // 登入成功
-                $identity = $userData['identity'];
-                $name = $userData['name'];
-                Session::put([
-                    'identity' => $identity,
-                    'name' => $name
-                    ]);
+        $request->validate([ 
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:6', 'max:12'],
+        ]);
 
-                return redirect('/');
-            } else {
-                // 登入失敗
-                return redirect('/login');
-            }
-        } else {
-            return redirect('/login');
-        }
+        $input['email'] = $request->email;
+        $input['password'] = $request->password;
+
+        $result = $this->userService->login($input);
+            
+        return $result;
     }
 
     public function postLogout()
