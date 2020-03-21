@@ -29,4 +29,9 @@ class UserService
             return redirect('/login');
         }
     }
+
+    public function register(array $input)
+    {
+        $this->userRepository->create($input);
+    }
 }

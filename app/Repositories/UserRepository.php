@@ -19,4 +19,13 @@ class UserRepository extends Model
 
         return $data;
     }
+
+    public function create(array $input)
+    {
+        $this->userData->create([
+            'email' => $input['email'],
+            'password' => $input['password'],
+            'name' => $input['name'],
+        ]);
+    }
 }

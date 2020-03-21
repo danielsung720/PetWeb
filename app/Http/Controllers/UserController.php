@@ -43,13 +43,12 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255']
         ]);
 
-        $create = UserData::create([
-            'email' => $request['email'],
-            'password' => $request['password'],
-            'name' => $request['name'],
-        ]);
+        $input['email'] = $request->email;
+        $input['password'] = $request->password;
+        $input['name'] = $request->name;
+        
+        $this->userService->register($input);
 
-        if ($create)
-            return redirect('/');
+        return redirect('/');
     }
 }
