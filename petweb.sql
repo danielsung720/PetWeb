@@ -101,7 +101,7 @@ CREATE TABLE `user_data` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL DEFAULT 0,
+  `identity` enum('user','admin') COLLATE utf8mb4_unicode_ci DEFAULT 'user',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -110,10 +110,10 @@ CREATE TABLE `user_data` (
 -- 傾印資料表的資料 `user_data`
 --
 
-INSERT INTO `user_data` (`id`, `email`, `password`, `name`, `isAdmin`, `created_at`, `updated_at`) VALUES
-(1, 'user0001@yahoo.com.tw', 'user0001', 'user0001', 0, '2020-03-17 03:51:55', '2020-03-17 03:51:55'),
-(2, 'user0002@yahoo.com.tw', 'user0002', 'user0002', 0, '2020-03-17 04:41:16', '2020-03-17 04:41:16'),
-(3, 'user0003@yahoo.com.tw', 'user0003', 'user0003', 0, '2020-03-17 06:35:03', '2020-03-17 06:35:03');
+INSERT INTO `user_data` (`id`, `email`, `password`, `name`, `identity`, `created_at`, `updated_at`) VALUES
+(6, 'user0001@yahoo.com.tw', '7c27acc4d937f432669130f9d290214ed4ee74023dc70d882081a61f001918ef', 'user0001', 'user', '2020-03-21 03:47:32', '2020-03-21 03:47:32'),
+(7, 'user0002@yahoo.com.tw', 'a8d96181dcb8f155a07e8cc74645d37724d6f4879c51ae1cec68f254d5197122', 'user0002', 'user', '2020-03-21 05:05:43', '2020-03-21 07:57:25'),
+(8, 'admin@petweb.com.tw', 'b59ee8ea18c7118be4a4f839f306dc3d8ae4e9a6da958cc1ddb5828c7918876d', '管理者', 'admin', '2020-03-21 07:55:04', '2020-03-21 07:58:39');
 
 -- --------------------------------------------------------
 
@@ -139,9 +139,12 @@ INSERT INTO `user_menu` (`id`, `field`, `icon_path`, `route_name`, `parent`, `ty
 (2, '購物說明', 'images/userMenu/description.png', 'index', NULL, '5'),
 (3, '登入 | 加入會員', 'images/userMenu/login.png', 'login', NULL, NULL),
 (4, '購物車', 'images/userMenu/scar.png', 'index', NULL, '5'),
-(5, '會員管理', 'images/userMenu/member.png', 'index', NULL, '0'),
-(6, '管理者管理', 'images/userMenu/adm.png', 'index', NULL, '1'),
-(7, '登出', 'images/userMenu/logout.png', 'logout', NULL, '4');
+(5, '會員管理', 'images/userMenu/member.png', 'user', NULL, 'user'),
+(6, '後台管理', 'images/userMenu/adm.png', 'index', NULL, 'admin'),
+(7, '登出', 'images/userMenu/logout.png', 'logout', NULL, '4'),
+(8, '功能選單管理', 'images/userMenu/function.png', 'index', '後台管理', 'admin'),
+(9, '一般選單管理', 'images/userMenu/hamburger.png', 'index', '後台管理', 'admin'),
+(10, '會員名單管理', 'images/userMenu/member.png', 'index', '後台管理', 'admin');
 
 --
 -- 已傾印資料表的索引
@@ -191,13 +194,13 @@ ALTER TABLE `nav`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
