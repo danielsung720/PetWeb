@@ -40,6 +40,7 @@ class UserController extends Controller
         $request->validate([ 
             'email' => ['required', 'string', 'email', 'max:255', 'unique:user_data'],
             'password' => ['required', 'string', 'min:6', 'max:12'],
+            'password_confirm' => ['required', 'string', 'min:6', 'max:12', 'same:password'],
             'name' => ['required', 'string', 'max:255']
         ]);
 
@@ -50,5 +51,30 @@ class UserController extends Controller
         $this->userService->register($input);
 
         return redirect('/');
+    }
+
+    public function update(Request $request)
+    {
+        if($request->password == null) {
+            $request->validate([ 
+                'email' => ['required', 'string', 'email', 'max:255'],
+                'name' => ['required', 'string', 'max:255']
+            ]);
+        } else {
+            $request->validate([
+                'email' => ['required', 'string', 'email', 'max:255'],
+                'password' => ['required', 'string', 'min:6', 'max:12'],
+                'password_confirm' => ['required', 'string', 'min:6', 'max:12', 'same:password'],
+                'name' => ['required', 'string', 'max:255']
+            ]);
+        }
+
+        $input['email'] = $request->email;
+        $input['password'] = $request->password;
+        $input['name'] = $request->name;
+
+        $this->userService->update($input);
+
+        return $this->postLogout();
     }
 }

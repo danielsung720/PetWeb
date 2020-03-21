@@ -25,4 +25,5 @@ Route::post('/login', 'UserController@postLogin');
 Route::get('/logout', 'UserController@postLogout')->name('logout');
 
 // 會員管理
-Route::middleware('UserAuth')->get('/member', 'WebController@getMember')->name('member');
+Route::middleware('UserAuth')->get('/user', 'WebController@getUser')->name('user');
+Route::middleware('UserAuth')->post('/update', 'UserController@update');

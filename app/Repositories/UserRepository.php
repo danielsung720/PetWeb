@@ -28,4 +28,12 @@ class UserRepository extends Model
             'name' => $input['name'],
         ]);
     }
+
+    public function updateDate(array $input)
+    {
+        $this->userData->where('email', $input['email'])->update([
+            'password' => $input['password'],
+            'name' => $input['name'],
+        ]);
+    }
 }
