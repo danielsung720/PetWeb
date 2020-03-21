@@ -16,8 +16,8 @@ class UserService
     public function login(array $input)
     {
         $userData = $this->userRepository->getUserData($input['email']);
-
-        if($input['email'] == $userData['email'] && $input['password'] == $userData['password']) {
+        $password = hash("sha256", $input['password'] . 'petweb520');
+        if($input['email'] == $userData['email'] && $password == $userData['password']) {
             $identity = $userData['identity'];
             $name = $userData['name'];
             Session::put([

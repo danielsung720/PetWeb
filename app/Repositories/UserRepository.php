@@ -24,7 +24,7 @@ class UserRepository extends Model
     {
         $this->userData->create([
             'email' => $input['email'],
-            'password' => $input['password'],
+            'password' => hash("sha256", $input['password'] . 'petweb520'),
             'name' => $input['name'],
         ]);
     }
