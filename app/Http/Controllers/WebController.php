@@ -53,9 +53,11 @@ class WebController extends Controller
         ]);
     }
 
-    public function getAllUser()
+    public function adminGetUser(Request $request)
     {
-        $userData = $this->userService->getAllUserData();
+        $email = $request->email;
+        $userData = $this->userService->getUserData($email);
+        // $userData = $this->userService->getAllUserData();
 
         return view('frontend.admin_user',[
             'navField' => $this->navField,
@@ -64,7 +66,7 @@ class WebController extends Controller
         ]);
     }
 
-    public function adminGetUser($email)
+    public function adminSlectUser($email)
     {
         $userData = $this->userService->getUserData($email);
 

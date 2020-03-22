@@ -17,11 +17,11 @@ class UserService
     {
         $userData = $this->userRepository->getUserData($input['email']);
         $password = hash("sha256", $input['password'] . 'petweb520');
-        if($input['email'] == $userData['email'] && $password == $userData['password']) {
-            $identity = $userData['identity'];
-            $name = $userData['name'];
+        if($input['email'] == $userData[0]['email'] && $password == $userData[0]['password']) {
+            $identity = $userData[0]['identity'];
+            $name = $userData[0]['name'];
             Session::put([
-                'email' => $userData['email'],
+                'email' => $userData[0]['email'],
                 'identity' => $identity,
                 'name' => $name ]);
             
@@ -36,18 +36,11 @@ class UserService
         $this->userRepository->create($input);
     }
 
-    public function getUserData($email)
-    {
-        $data = $this->userRepository->getUserData($email);
-
-        return $data;
-    }
-
     public function update(array $input)
     {
         if($input['password'] == null) {
             $userData = $this->userRepository->getUserData($input['email']);
-            $input['password'] = $userData['password'];
+            $input['password'] = $userData[0]['password'];
         } else {
             $input['password'] = hash("sha256", $input['password'] . 'petweb520');
         }
@@ -60,9 +53,14 @@ class UserService
         $this->userRepository->fakeDelete($email);
     }
 
-    public function getAllUserData()
+    public function getUserData($email)
     {
-        $data = $this->userRepository->getAllUserData();
+        if($email == null) {
+            $data = $this->userRepository->getAllUserData();
+        } else {
+            $data = $this->userRepository->getUserData($email);
+            $data = collect($data)->toArray();
+        }
 
         return $data;
     }

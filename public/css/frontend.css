@@ -60,6 +60,7 @@
 .admin-user>div{ padding: 5px; }
 .admin-user>div:nth-child(1){ border-bottom: #FF8800 1px solid; }
 .admin-user>div:nth-child(2){ font-weight: 900; background: #FF8800; }
+.admin-user>div:nth-last-child(1){ margin: 5px; display: flex; }
 .admin-user .title,
 .admin-user .list{ display: flex; }
 .admin-user .title div:nth-child(1),
@@ -76,6 +77,12 @@
 .admin-user .list a:hover{ font-size: 18px; }
 .admin-user .list a:focus{ outline: none; }
 .admin-user .list:hover{ font-weight: 900; cursor: default; }
+/* .admin-user .control-box div:nth-child(1){ display: flex; } */
+.pagination{ display: flex; justify-content: flex-end; }
+.pagination li{ margin: 0 3px; }
+.pagination span{ font-weight: 900; color: #fff; background-color: #FF8800; border-radius: 3px; padding: 4px; }
+.pagination li a{ text-decoration: none; color: black; border: #FF8800 1px solid; border-radius: 3px; padding: 3px; }
+.pagination li a:hover{ color: #fff; background: #FF8800; font-weight: 900; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }

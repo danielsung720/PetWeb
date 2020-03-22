@@ -15,7 +15,7 @@ class UserRepository extends Model
 
     public function getUserData($email)
     {
-        $data = $this->userData->where('email', $email)->first();
+        $data = $this->userData->where('email', $email)->get();
 
         return $data;
     }
@@ -46,7 +46,7 @@ class UserRepository extends Model
 
     public function getAllUserData()
     {
-        $data = $this->userData->where('active', '1')->get();
+        $data = $this->userData->where('active', '1')->paginate(8);
 
         return $data;
     }
