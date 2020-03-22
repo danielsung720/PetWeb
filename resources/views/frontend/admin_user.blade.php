@@ -7,7 +7,7 @@
 <div class="content">
     <div class="admin-user">
         <div><h3>會員名單管理</h3></div>
-        <div class="list">
+        <div class="title">
             <div>No.</div>
             <div>E-mail</div>
             <div>Name</div>

@@ -55,11 +55,25 @@
 .login button:hover,
 .login a:hover{ font-weight: 900; }
 
-.admin-user .list{ display: flex; justify-content: center;}
+.admin-user{ border: #FF8800 1px solid; border-radius: 10px; text-align: center; }
+.admin-user>div{ padding: 5px; }
+.admin-user>div:nth-child(1){ border-bottom: #FF8800 1px solid; }
+.admin-user>div:nth-child(2){ font-weight: 900; background: #FF8800; }
+.admin-user .title,
+.admin-user .list{ display: flex; }
+.admin-user .title div:nth-child(1),
 .admin-user .list div:nth-child(1){ width: 50px; }
-.admin-user .list div:nth-child(2){ width: 200px; }
+.admin-user .title div:nth-child(2),
+.admin-user .list div:nth-child(2){ width: 250px; }
+.admin-user .title div:nth-child(3),
 .admin-user .list div:nth-child(3){ width: 100px; }
-.admin-user .list div:nth-child(4){ width: 70px; }
+.admin-user .title div:nth-child(4),
+.admin-user .list div:nth-child(4){ width: 100px; }
+.admin-user .list div{ border-bottom: #FF8800 1px solid; padding: 5px; }
+.admin-user .list button{ cursor: pointer; }
+.admin-user .list button{ background: #fff; border: #FF8800 1px solid; border-radius: 10px; padding: 5px; }
+.admin-user .list button:hover{ font-weight: 900; }
+.admin-user .list:hover{ font-weight: 900; cursor: default; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }
