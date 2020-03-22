@@ -1,7 +1,9 @@
 <!-- Nav Start -->
 @if(session('name') !== null)
     <div class="user-name">
-        {{ session('name') }} 您好!!
+        <div>
+            {{ session('name') }} 您好!!
+        </div>
     </div>
 @endif
 <div class="user-menu">

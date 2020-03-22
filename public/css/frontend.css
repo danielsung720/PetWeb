@@ -3,6 +3,7 @@
 .header{ display: flex; margin-top: 30px; }
 
 .user-name{ display: flex; justify-content: center; margin-top: 10px; font-weight: 900; cursor: default; }
+.user-name div{ background: #FF8800; border-radius: 10px; padding: 10px 20px; color: #fff; }
 
 .user-menu{ margin-top: 10px; }
 .nav{ padding-bottom: 10px; border-bottom: #ddd solid 1px; }
