@@ -3,7 +3,7 @@
 @section('title', '註冊帳號::此專案為個人練習使用，無任何營利用途')
 
 @section('content')
-<!-- Home Start -->
+<!-- Content Start -->
 <div class="content">
     <form method="POST" action="login">
     {!! csrf_field() !!}
@@ -18,5 +18,5 @@
         </div>
     </form>
 </div>
-<!-- Home End -->
+<!-- Content End -->
 @endsection

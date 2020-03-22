@@ -3,9 +3,9 @@
 @section('title', 'PetWeb::此專案為個人練習使用，無任何營利用途')
 
 @section('content')
-<!-- Home Start -->
+<!-- Content Start -->
 <div class="content">
-    <form method="POST" action="update">
+    <form method="POST" action="{{ asset(route('update')) }}">
     {!! csrf_field() !!}
         <div class="update-data">
             <div><h3>修改會員資料</h3></div>
@@ -17,5 +17,5 @@
         </div>
     </form>
 </div>
-<!-- Home End -->
+<!-- Content End -->
 @endsection

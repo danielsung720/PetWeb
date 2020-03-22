@@ -71,9 +71,10 @@
 .admin-user .title div:nth-child(4),
 .admin-user .list div:nth-child(4){ width: 100px; }
 .admin-user .list div{ border-bottom: #FF8800 1px solid; padding: 5px; }
-.admin-user .list button{ cursor: pointer; }
-.admin-user .list button{ background: #fff; border: #FF8800 1px solid; border-radius: 10px; padding: 5px; }
-.admin-user .list button:hover{ font-weight: 900; }
+.admin-user .list a{ cursor: pointer; text-decoration: none; color: #000; }
+.admin-user .list a{ background: #fff; border: #FF8800 1px solid; border-radius: 10px; padding: 2px; }
+.admin-user .list a:hover{ font-size: 18px; }
+.admin-user .list a:focus{ outline: none; }
 .admin-user .list:hover{ font-weight: 900; cursor: default; }
 
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }

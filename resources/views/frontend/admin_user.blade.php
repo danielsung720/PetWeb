@@ -3,7 +3,7 @@
 @section('title', 'PetWeb::此專案為個人練習使用，無任何營利用途')
 
 @section('content')
-<!-- Home Start -->
+<!-- Content Start -->
 <div class="content">
     <div class="admin-user">
         <div><h3>會員名單管理</h3></div>
@@ -19,12 +19,12 @@
             <div>{{$item['email']}}</div>
             <div>{{$item['name']}}</div>
             <div>
-                <button>修改</button>
-                <button>刪除</button>
+                <a href="/admin_update_user/{{$item['email']}}">修改</a>
+                <a>刪除</a>
             </div>
         </div>
         @endforeach
     </div>
 </div>
-<!-- Home End -->
+<!-- Content End -->
 @endsection

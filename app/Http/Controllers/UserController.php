@@ -75,6 +75,11 @@ class UserController extends Controller
 
         $this->userService->update($input);
 
-        return $this->postLogout();
+        $identity = Session::get('identity');
+        if($identity == 'admin') {
+            return redirect(route('admin_user'));
+        } else {
+            return $this->postLogout();
+        }
     }
 }

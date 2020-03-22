@@ -46,7 +46,7 @@ class WebController extends Controller
     {
         $userData = $this->userService->getUserData($this->email);
 
-        return view('frontend.user',[
+        return view('frontend.update_user',[
             'navField' => $this->navField,
             'userMenu' => $this->userMenu,
             'userData' => $userData
@@ -58,6 +58,17 @@ class WebController extends Controller
         $userData = $this->userService->getAllUserData();
 
         return view('frontend.admin_user',[
+            'navField' => $this->navField,
+            'userMenu' => $this->userMenu,
+            'userData' => $userData
+        ]);
+    }
+
+    public function adminGetUser($email)
+    {
+        $userData = $this->userService->getUserData($email);
+
+        return view('frontend.admin_update_user',[
             'navField' => $this->navField,
             'userMenu' => $this->userMenu,
             'userData' => $userData
