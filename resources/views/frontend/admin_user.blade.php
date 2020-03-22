@@ -20,7 +20,7 @@
             <div>{{$item['name']}}</div>
             <div>
                 <a href="/admin_update_user/{{$item['email']}}">修改</a>
-                <a>刪除</a>
+                <a href="/admin_delete_user/{{$item['email']}}">刪除</a>
             </div>
         </div>
         @endforeach

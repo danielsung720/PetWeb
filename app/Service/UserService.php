@@ -55,6 +55,11 @@ class UserService
         $this->userRepository->updateDate($input);
     }
 
+    public function delete($email)
+    {
+        $this->userRepository->fakeDelete($email);
+    }
+
     public function getAllUserData()
     {
         $data = $this->userRepository->getAllUserData();

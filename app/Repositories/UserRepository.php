@@ -29,6 +29,13 @@ class UserRepository extends Model
         ]);
     }
 
+    public function fakeDelete($email)
+    {
+        $this->userData->where('email', $email)->update([
+            'active' => '0',
+        ]);
+    }
+
     public function updateDate(array $input)
     {
         $this->userData->where('email', $input['email'])->update([
@@ -39,7 +46,7 @@ class UserRepository extends Model
 
     public function getAllUserData()
     {
-        $data = $this->userData->get();
+        $data = $this->userData->where('active', '1')->get();
 
         return $data;
     }

@@ -82,4 +82,11 @@ class UserController extends Controller
             return $this->postLogout();
         }
     }
+
+    public function delete($email)
+    {
+        $this->userService->delete($email);
+
+        return redirect(route('admin_user'));
+    }
 }
