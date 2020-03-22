@@ -37,7 +37,7 @@
                     {{$userData->render()}}
                 </div>
             </div>
-        @else
+        @elseif(count($userData) == 1)
             <div class="list">
                 <div>1</div>
                 <div>{{$userData[0]['email']}}</div>
@@ -55,6 +55,10 @@
                         <button type="submit">查詢</button>
                     </div>
                 </form>
+            </div>
+        @else
+            <div>
+                <h3>查無資料</h3>
             </div>
         @endif
     </div>
