@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Start -->
 <div class="content">
-    <form method="POST" action="login">
+    <form method="POST" action="{{ route('login') }}">
     {!! csrf_field() !!}
         <div class="login">
             <div><h3>登入您的帳號</h3></div>

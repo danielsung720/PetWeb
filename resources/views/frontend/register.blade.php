@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Start -->
 <div class="content">
-    <form method="POST" action="register">
+    <form method="POST" action="{{ route('register') }}">
     {!! csrf_field() !!}
         <div class="register">
             <div><h3>會員資料填寫</h3></div>

@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Start -->
 <div class="content">
-    <form method="POST" action="update">
+    <form method="POST" action="{{ route('update') }}">
     {!! csrf_field() !!}
         <div class="update-data">
             <div><h3>修改會員資料</h3></div>

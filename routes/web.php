@@ -23,13 +23,18 @@ Route::post('/register', 'UserController@postRegister');
 // 登入&登出
 Route::get('/login', 'WebController@getLogin')->name('login');
 Route::post('/login', 'UserController@postLogin');
-Route::get('/logout', 'UserController@postLogout')->name('logout');
+Route::get('/logout', 'UserController@postLogout');
 
 // 會員管理
-Route::middleware('UserAuth')->get('/user', 'WebController@getUser')->name('user');
+Route::middleware('UserAuth')->get('/user', 'WebController@getUser');
 Route::middleware('UserAuth')->post('/update', 'UserController@update')->name('update');
 
-// 後台管理: 會員資料
-Route::middleware('AdminAuth')->get('/admin_user', 'WebController@adminGetUser')->name('admin_user');
-Route::middleware('AdminAuth')->get('/admin_update_user/{email}', 'WebController@adminSlectUser');
-Route::middleware('AdminAuth')->get('/admin_delete_user/{email}', 'UserController@delete');
+// 後台管理
+Route::group(['middleware' => ['AdminAuth']], function(){
+    // 會員資料
+    Route::get('/admin_user', 'WebController@adminGetUser')->name('admin_user');
+    Route::get('/admin_update_user/{email}', 'WebController@adminSlectUser');
+    Route::get('/admin_delete_user/{email}', 'UserController@delete');
+});
+
+
