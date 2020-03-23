@@ -84,6 +84,34 @@
 .pagination li a{ text-decoration: none; color: black; border: #FF8800 1px solid; border-radius: 3px; padding: 3px; }
 .pagination li a:hover{ color: #fff; background: #FF8800; font-weight: 900; }
 
+.admin-user-menu .title{ display: flex; }
+.admin-user-menu .menu{ display: flex; }
+.admin-user-menu .sub{ display: flex; }
+.admin-user-menu .title>div{ margin: 5px; padding: 5px; border: #ddd 2px solid; }
+.admin-user-menu .menu div,
+.admin-user-menu .sub div{ margin: 5px; }
+.admin-user-menu .menu div input,
+.admin-user-menu .sub div input{ padding: 5px; }
+.admin-user-menu .title>div:nth-child(1),
+.admin-user-menu .menu>div:nth-child(1)>input,
+.admin-user-menu .sub>div:nth-child(1)>input{ width: 40px; }
+.admin-user-menu .title>div:nth-child(2),
+.admin-user-menu .menu>div:nth-child(2)>input,
+.admin-user-menu .sub>div:nth-child(2)>input{ width: 100px; }
+.admin-user-menu .title>div:nth-child(3),
+.admin-user-menu .menu>div:nth-child(3)>input,
+.admin-user-menu .sub>div:nth-child(3)>input{ width: 200px; }
+.admin-user-menu .title>div:nth-child(4),
+.admin-user-menu .menu>div:nth-child(4)>input,
+.admin-user-menu .sub>div:nth-child(4)>input{ width: 120px; }
+.admin-user-menu .title>div:nth-child(5),
+.admin-user-menu .menu>div:nth-child(5)>input,
+.admin-user-menu .sub>div:nth-child(5)>input{ width: 60px; }
+.admin-user-menu .title>div:nth-child(6),
+.admin-user-menu .menu>div:nth-child(6)>input,
+.admin-user-menu .sub>div:nth-child(6)>input{ width: 50px; }
+
+
 .footer{ display: flex; flex-wrap: wrap; justify-content: center; background: #FF8800; margin-top: 10px; padding: 20px 0; }
 .footer .info{ color: #fff; }
 .footer .links{ line-height: 89.6px; }

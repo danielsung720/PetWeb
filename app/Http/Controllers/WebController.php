@@ -57,7 +57,6 @@ class WebController extends Controller
     {
         $email = $request->email;
         $userData = $this->userService->getUserData($email);
-        // $userData = $this->userService->getAllUserData();
 
         return view('frontend.admin_user',[
             'navField' => $this->navField,
@@ -74,6 +73,18 @@ class WebController extends Controller
             'navField' => $this->navField,
             'userMenu' => $this->userMenu,
             'userData' => $userData
+        ]);
+    }
+
+    public function adminGetUserMenu()
+    {
+        $menuType = 'all';
+        $allUserMenu = $this->webService->getUserMenu($menuType);
+
+        return view('frontend.admin_user_menu',[
+            'navField' => $this->navField,
+            'userMenu' => $this->userMenu,
+            'allUserMenu' => $allUserMenu
         ]);
     }
 }

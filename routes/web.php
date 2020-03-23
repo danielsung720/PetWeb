@@ -31,6 +31,8 @@ Route::middleware('UserAuth')->post('/update', 'UserController@update')->name('u
 
 // 後台管理
 Route::group(['middleware' => ['AdminAuth']], function(){
+    // 功能選單
+    Route::get('/admin_user_menu', 'WebController@adminGetUserMenu')->name('admin_user_menu');
     // 會員資料
     Route::get('/admin_user', 'WebController@adminGetUser')->name('admin_user');
     Route::get('/admin_update_user/{email}', 'WebController@adminSlectUser');

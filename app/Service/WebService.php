@@ -53,8 +53,9 @@ class WebService
                 $title[$key]['sub'][0]['id'] = '';
                 $title[$key]['sub'][0]['field'] = '';
                 $title[$key]['sub'][0]['icon_path'] = '';
-                $title[$key]['sub'][0]['route_name'] = '';
+                $title[$key]['sub'][0]['route_path'] = '';
                 $title[$key]['sub'][0]['parent'] = '';
+                $title[$key]['sub'][0]['type'] = '';
             }
         }
 
