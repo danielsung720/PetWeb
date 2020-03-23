@@ -113,7 +113,7 @@ CREATE TABLE `user_data` (
 
 INSERT INTO `user_data` (`id`, `email`, `password`, `name`, `identity`, `created_at`, `updated_at`, `active`) VALUES
 (6, 'user0001@yahoo.com.tw', '7c27acc4d937f432669130f9d290214ed4ee74023dc70d882081a61f001918ef', '周星馳', 'user', '2020-03-21 03:47:32', '2020-03-22 01:10:00', '1'),
-(7, 'user0002@yahoo.com.tw', 'c3f175ebbc3caffac0e506458f349f8fba90d11556de75271c40d677c8c7a762', '陳小春', 'user', '2020-03-21 05:05:43', '2020-03-22 01:19:10', '1'),
+(7, 'user0002@yahoo.com.tw', 'c3f175ebbc3caffac0e506458f349f8fba90d11556de75271c40d677c8c7a762', '陳小春', 'user', '2020-03-21 05:05:43', '2020-03-23 10:34:24', '1'),
 (8, 'admin@petweb.com.tw', 'b59ee8ea18c7118be4a4f839f306dc3d8ae4e9a6da958cc1ddb5828c7918876d', '超帥的管理者', 'admin', '2020-03-21 07:55:04', '2020-03-22 01:32:24', '1'),
 (9, 'user0005@yahoo.com.tw', '5b91f2b06968cad5259a49cc571fca5913c8bee6a4182ce729589875f2a14eeb', '周杰倫', 'user', '2020-03-22 00:43:03', '2020-03-22 00:43:03', '1'),
 (10, 'user0006@yahoo.com.tw', '560e228d5f743a89d9fb3caa0c5ea0f33ff32fc1b53b5277ecf64dea49983c3c', '蔡依林', 'user', '2020-03-22 00:43:22', '2020-03-22 00:43:22', '1'),
@@ -163,14 +163,14 @@ CREATE TABLE `user_menu` (
 --
 
 INSERT INTO `user_menu` (`id`, `field`, `icon_path`, `route_path`, `parent`, `type`) VALUES
-(1, '首頁', 'images/userMenu/index.png', '/', NULL, '5'),
-(2, '購物說明', 'images/userMenu/description.png', '#', NULL, '5'),
+(1, '首頁', 'images/userMenu/index.png', '/', NULL, 'public'),
+(2, '購物說明', 'images/userMenu/description.png', '#', NULL, 'public'),
 (3, '登入 | 加入會員', 'images/userMenu/login.png', '/login', NULL, NULL),
-(4, '購物車', 'images/userMenu/scar.png', '#', NULL, '5'),
+(4, '購物車', 'images/userMenu/scar.png', '#', NULL, 'public'),
 (5, '會員管理', 'images/userMenu/member.png', '/user', NULL, 'user'),
 (6, '後台管理', 'images/userMenu/adm.png', '#', NULL, 'admin'),
-(7, '登出', 'images/userMenu/logout.png', '/logout', NULL, '4'),
-(8, '功能選單管理', 'images/userMenu/function.png', '#', '後台管理', 'admin'),
+(7, '登出', 'images/userMenu/logout.png', '/logout', NULL, 'member'),
+(8, '功能選單管理', 'images/userMenu/function.png', '/admin_user_menu', '後台管理', 'admin'),
 (9, '一般選單管理', 'images/userMenu/hamburger.png', '#', '後台管理', 'admin'),
 (10, '會員名單管理', 'images/userMenu/member.png', '/admin_user', '後台管理', 'admin');
 
@@ -228,7 +228,7 @@ ALTER TABLE `user_data`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
